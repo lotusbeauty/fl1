@@ -21,21 +21,21 @@
             position: absolute;
             top: 0;
             width: 100%;
-            height: 50px;
+            height: 60px;
             background: #2e4054;
             color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            font-size: 14px;
+            font-size: 12px;
         }
         .taskbar-left {
             display: flex;
             align-items: center;
         }
         .taskbar-logo {
-            height: 35px;
+            height: 30px;
             margin-right: 10px;
         }
         .taskbar-text {
@@ -47,12 +47,40 @@
             font-weight: bold;
         }
         .menu-icon {
-            font-size: 22px;
+            font-size: 18px;
             cursor: pointer;
+            position: relative;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 40px;
+            background: white;
+            color: black;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            width: 150px;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu ul li {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu ul li:last-child {
+            border-bottom: none;
+        }
+        .menu ul li:hover {
+            background: #f0f0f0;
         }
         .logo {
             width: 300px;
-            margin-top: 60px;
+            margin-top: 70px;
         }
         .button {
             margin-top: 20px;
@@ -78,7 +106,16 @@
                 <span>R9ZXFVK18FP</span>
             </div>
         </div>
-        <div class="menu-icon">⋮</div>
+        <div class="menu-icon" onclick="toggleMenu()">⋮
+            <div class="menu" id="menu">
+                <ul>
+                    <li onclick="connectWifi()">Wi-Fi Connection</li>
+                    <li onclick="location.reload()">Refresh</li>
+                    <li onclick="adjustBrightness()">Brightness Control</li>
+                    <li onclick="exitScalefusion()">Exit Scalefusion</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <img src="logo.png" alt="Infinity Learn Logo" class="logo">
     <button class="button" onclick="openApp()">Open App</button>
@@ -93,6 +130,20 @@
         }
         setInterval(updateTime, 1000);
         updateTime();
+        
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+        function connectWifi() {
+            alert("Wi-Fi settings will open here.");
+        }
+        function adjustBrightness() {
+            alert("Brightness control will be implemented here.");
+        }
+        function exitScalefusion() {
+            alert("Exiting Scalefusion...");
+        }
     </script>
 </body>
 </html>
