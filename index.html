@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk Interface</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('fg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .taskbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            background: #2e4054;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-size: 16px;
+        }
+        .taskbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .taskbar-logo {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .taskbar-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .taskbar-text span:first-child {
+            font-weight: bold;
+        }
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .logo {
+            width: 300px;
+            margin-top: 60px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="taskbar">
+        <div class="taskbar-left">
+            <img src="download.jpeg" alt="Logo" class="taskbar-logo">
+            <div class="taskbar-text">
+                <span>Infinity Learn By Sri Chaitanya</span>
+                <span>R9ZXFVK18FP</span>
+            </div>
+        </div>
+        <div class="menu-icon">⋮</div>
+    </div>
+    <img src="logo.png" alt="Infinity Learn Logo" class="logo">
+    <button class="button" onclick="openApp()">Open App</button>
+    
+    <script>
+        function openApp() {
+            window.location.href = "https://yourapp.com"; // Change to your actual app URL
+        }
+        function updateTime() {
+            const now = new Date();
+            document.getElementById("time").innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
